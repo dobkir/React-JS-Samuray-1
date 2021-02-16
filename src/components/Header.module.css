@@ -1,0 +1,19 @@
+.header {
+	grid-area: header;
+	display: flex;
+	justify-items: center;
+	padding: 10px;
+}
+
+.header__logo {
+	margin-left: 30px;
+	width: 50px;
+}
+
+.header__title {
+	margin: auto auto;
+
+	text-align: center;
+
+	text-transform: uppercase;
+}

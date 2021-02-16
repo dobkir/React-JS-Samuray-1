@@ -1,0 +1,29 @@
+.nav {
+	grid-area: nav;
+	padding: 90px 0px 0px 40px;
+
+	font-size: 24px;
+	font-weight: 700;
+	font-style: italic;
+	line-height: 1.4;
+
+	background-image: url("./../images/red_lanterns_sakura.png");
+	background-position: 0% 0%;
+	background-repeat: no-repeat;
+	background-size: 70%;
+
+	position: relative;
+}
+
+.nav__item {
+	margin-left: auto;
+
+	text-decoration: none;
+
+	position: relative;
+}
+
+.nav__active {
+	color: #EE8B8B;
+	-webkit-text-stroke: .8px #DC3636;
+}

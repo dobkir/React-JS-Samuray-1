@@ -1,7 +1,22 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
 .app-wrapper {
 	display: grid;
 	grid-template-rows: 70px 1fr;
-	grid-template-columns: 2fr 10fr;
+	grid-template-columns: 2fr 12fr;
 	grid-gap: normal;
 	grid-template-areas:
 		"header header"
@@ -19,37 +34,4 @@
 
 	background-color: #BBE664;
 	overflow: hidden;
-}
-
-.header {
-	grid-area: header;
-	padding: 10px;
-}
-
-.header__logo {
-	width: 50px;
-}
-
-.nav {
-	grid-area: nav;
-	padding: 20px;
-
-	font-size: 22px;
-	font-weight: 700;
-	font-style: italic;
-	line-height: 1.4;
-}
-
-.content {
-	grid-area: content;
-}
-
-.content__top {
-	height: 250px;
-	width: 100%;
-
-	background-image: url("./images/samurai-background-img.webp");
-	background-position: 0% 90%;
-	background-repeat: no-repeat;
-	background-size: cover;
 }

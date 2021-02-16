@@ -1,10 +1,12 @@
+import classes from './Profile.module.css';
+
 const Profile = () => {
 	return (
-		<div className='content'>
-			<div className='content__top'></div>
+		<div className={classes.profile}>
+			<div className={classes.profile__top}></div>
 			<div>
 				ava + description
-				</div>
+			</div>
 			<div>
 				My posts
 					<div>
@@ -12,10 +14,10 @@ const Profile = () => {
 						<div>
 						<div>
 							post 1
-							</div>
+						</div>
 						<div>
 							post 2
-							</div>
+						</div>
 					</div>
 				</div>
 			</div>
