@@ -1,4 +1,4 @@
-import logo from './../images/the_seated_samurai.png';
+import logo from './../../images/the_seated_samurai.png';
 import classes from './Header.module.css';
 
 const Header = () => {

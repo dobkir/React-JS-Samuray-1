@@ -6,7 +6,7 @@
 	height: 250px;
 	width: 100%;
 
-	background-image: url("./../images/samurai-background-img.webp");
+	background-image: url("./../../images/samurai-background-img.webp");
 	background-position: 0% 90%;
 	background-repeat: no-repeat;
 	background-size: cover;
