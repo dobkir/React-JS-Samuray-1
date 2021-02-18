@@ -24,6 +24,6 @@
 }
 
 .nav__active {
-	color: #EE8B8B;
-	-webkit-text-stroke: .8px #DC3636;
+	color: #F08080;
+	-webkit-text-stroke: .8px #DC143C;
 }

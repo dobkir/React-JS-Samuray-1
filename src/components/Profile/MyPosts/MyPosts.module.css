@@ -14,7 +14,7 @@
 .textarea {
 	height: 100px;
 	resize: none;
-	outline-color: #EE8B8B;
+	outline-color: #F08080;
 
 	border-radius: 4px;
 }
@@ -34,7 +34,7 @@
 	font-weight: 600;
 	color: #fff;
 
-	background-color: #EE8B8B;
+	background-color: #F08080;
 	border-color: transparent;
 	border-radius: 4px;
 }
@@ -45,9 +45,9 @@
 
 	font-size: 16px;
 	font-weight: 600;
-	color: #BBE664;
+	color: #90EE90;
 
-	background-color: #DC3636;
+	background-color: #DC143C;
 }
 
 .item {
@@ -56,8 +56,8 @@
 	max-width: 300px;
 	align-items: center;
 
-	color: #EE8B8B;
-	-webkit-text-stroke: .8px #DC3636;
+	color: #F08080;
+	-webkit-text-stroke: .8px #DC143C;
 	/* overflow: hidden; */
 }
 
@@ -66,7 +66,7 @@
 	width: 50px;
 	flex-shrink: 0;
 
-	border: .5px solid #DC3636;
+	border: .5px solid #DC143C;
 	border-radius: 50%;
 }
 
