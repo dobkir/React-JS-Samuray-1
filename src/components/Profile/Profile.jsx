@@ -1,13 +1,11 @@
-import MyPosts from './MyPosts/MyPosts';
 import classes from './Profile.module.css';
+import MyPosts from './MyPosts/MyPosts';
+import Profileinfo from './Profileinfo/Profileinfo';
 
 const Profile = () => {
 	return (
 		<div>
-			<div className={classes.profile__top}></div>
-			<div>
-				ava + description
-			</div>
+			<Profileinfo />
 			<MyPosts />
 		</div>
 	);
