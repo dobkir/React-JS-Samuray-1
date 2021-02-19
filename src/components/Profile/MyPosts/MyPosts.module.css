@@ -1,13 +1,21 @@
 .container {
 	display: flex;
 	flex-direction: column;
+	margin-top: 10px;
 	max-height: 700px;
 	max-width: 500px;
+}
+
+.title {
+	padding: 10px;
+
+	font-size: 18px;
 }
 
 .post__area {
 	display: flex;
 	flex-direction: column;
+	padding: 10px;
 	max-width: 400px;
 }
 
