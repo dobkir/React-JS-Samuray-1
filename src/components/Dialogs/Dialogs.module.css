@@ -2,8 +2,42 @@
 	height: 100%;
 	width: 100%;
 
+	font-size: 18px;
+	font-weight: 500;
+
 	background: url("./../../images/dialogs_bg.png");
 	background-position: 0% 90%;
 	background-repeat: space;
 	opacity: .6;
+}
+
+.dialogs {
+	display: grid;
+	grid-template-columns: 2fr 10fr;
+}
+
+.title {
+	padding: 10px;
+}
+
+.items {
+	padding: 10px;
+}
+
+.dialog a.active {
+	font-weight: 600;
+	color: #F08080;
+	-webkit-text-stroke: .5px #DC143C;
+}
+
+.messages {
+	padding: 10px;
+}
+
+.dialog {
+	padding-bottom: 10px;
+}
+
+.message {
+	padding-bottom: 10px;
 }
