@@ -52,3 +52,7 @@ h6 {
 	background-color: #90EE90;
 	overflow: auto;
 }
+
+.app-wrapper-content {
+	grid-area: content;
+}
