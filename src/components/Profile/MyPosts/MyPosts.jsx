@@ -1,7 +1,16 @@
 import classes from './MyPosts.module.css';
 import Post from './Post/Post';
 
-const MyPosts = () => {
+let posts = [
+	{ id: 1, message: 'Hi! How are you?', likesCount: '5' },
+	{ id: 2, message: 'It`s my first post', likesCount: '3' },
+	{ id: 3, message: 'BlaBla', likesCount: '2' },
+	{ id: 4, message: 'Dada', likesCount: '2' },
+];
+
+let postElements = posts.map(post => <Post message={post.message} likesCount={post.likesCount} />)
+
+const MyPosts = (props) => {
 	return (
 		<div className={classes.container}>
 			<h3 className={classes.title}>My posts</h3>
@@ -13,8 +22,7 @@ const MyPosts = () => {
 				</div>
 				<hr />
 				<div className={classes.posts}>
-					<Post message='Hi! How are you?' likesCount='5' />
-					<Post message='It`s my first post' likesCount='3' />
+					{postElements}
 				</div>
 			</div>
 		</div>
