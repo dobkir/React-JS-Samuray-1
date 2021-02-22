@@ -1,6 +1,6 @@
 .item {
 	display: grid;
-	grid-template-rows: 100px 50px;
+	grid-template-rows: auto;
 	grid-template-columns: 2fr 8fr;
 	grid-gap: normal;
 	grid-template-areas:
@@ -24,9 +24,10 @@
 
 .post {
 	grid-area: post;
-	display: flex;
-	margin-bottom: auto;
+	display: block;
+	/* margin-bottom: auto; */
 	margin-left: 10px;
+	min-height: 50px;
 	max-height: 100px;
 	max-width: 400px;
 
