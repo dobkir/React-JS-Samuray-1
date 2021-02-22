@@ -51,9 +51,10 @@
 	margin-top: 10px;
 	padding: 6px 16px;
 
-	font-size: 16px;
+	/* font-size: 16px; */
 	font-weight: 600;
 	color: #90EE90;
+	text-transform: uppercase;
 
 	background-color: #DC143C;
 }

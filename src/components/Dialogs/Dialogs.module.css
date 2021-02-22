@@ -25,7 +25,7 @@
 }
 
 .dialog a.active {
-	font-weight: 600;
+	font-weight: 700;
 	color: #F08080;
 	-webkit-text-stroke: .5px #DC143C;
 }
