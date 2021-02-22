@@ -47,7 +47,8 @@
 	border-radius: 4px;
 }
 
-.posts__btn:hover {
+.posts__btn:hover,
+.posts__btn:focus {
 	margin-top: 10px;
 	padding: 6px 16px;
 
@@ -57,6 +58,7 @@
 	text-transform: uppercase;
 
 	background-color: #DC143C;
+	outline: transparent;
 }
 
 .item {

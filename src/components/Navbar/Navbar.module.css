@@ -28,3 +28,9 @@
 	color: #F08080;
 	-webkit-text-stroke: .5px #DC143C;
 }
+
+.item a:hover,
+.item a:focus {
+	-webkit-text-stroke: 1px #F08080;
+	outline: transparent;
+}
