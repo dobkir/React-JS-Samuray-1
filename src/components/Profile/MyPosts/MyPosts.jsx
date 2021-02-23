@@ -1,4 +1,5 @@
 import React from 'react';
+import { addPostActionCreator, clearPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/state';
 import classes from './MyPosts.module.css';
 import Post from './Post/Post';
 
@@ -7,14 +8,14 @@ const MyPosts = (props) => {
 		<Post message={post.message} likesCount={post.likesCount} />);
 	let newPostElement = React.createRef();
 	let addPost = () => {
-		props.dispatch({ type: 'ADD-POST' });
+		props.dispatch(addPostActionCreator());
 	};
 	let clearPost = () => {
-		props.dispatch({ type: 'ADD-POST', newPostText: '' });
+		props.dispatch(clearPostActionCreator());
 	};
 	let onPostChange = () => {
 		let text = newPostElement.current.value;
-		let action = ({ type: 'UPDATE-NEW-POST-TEXT', newText: text });
+		let action = (updateNewPostTextActionCreator(text));
 		props.dispatch(action);
 	};
 
@@ -27,7 +28,7 @@ const MyPosts = (props) => {
 					onChange={onPostChange} />
 				<div className={classes.post__footer}>
 					<button className={classes.posts__btn} type="submit" onClick={addPost}>Add post</button>
-					<button className={classes.posts__btn} type="submit" onClick={clearPost}>Remove</button>
+					<button className={classes.posts__btn} type="submit" onClick={clearPost}>Clear post</button>
 				</div>
 				<hr />
 				<div className={classes.posts}>
