@@ -8,7 +8,11 @@ const MyPosts = (props) => {
 	let newPostElement = React.createRef();
 	let addPost = () => {
 		let text = newPostElement.current.value;
-		alert(text);
+		props.addPost(text);
+		newPostElement.current.value = '';
+	};
+	let clearPost = () => {
+		newPostElement.current.value = '';
 	};
 
 	return (
@@ -19,7 +23,7 @@ const MyPosts = (props) => {
 					rows="10" placeholder="Enter your message" ref={newPostElement}></textarea>
 				<div className={classes.post__footer}>
 					<button className={classes.posts__btn} type="submit" onClick={addPost}>Add post</button>
-					<button className={classes.posts__btn} type="submit">Remove</button>
+					<button className={classes.posts__btn} type="submit" onClick={clearPost}>Remove</button>
 				</div>
 				<hr />
 				<div className={classes.posts}>
