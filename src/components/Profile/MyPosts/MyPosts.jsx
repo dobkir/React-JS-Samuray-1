@@ -7,15 +7,15 @@ const MyPosts = (props) => {
 		<Post message={post.message} likesCount={post.likesCount} />);
 	let newPostElement = React.createRef();
 	let addPost = () => {
-		let text = newPostElement.current.value;
-		props.addPost(text);
+		props.dispatch({ type: 'ADD-POST' });
 	};
 	let clearPost = () => {
-		props.updateNewPostText('');
+		props.dispatch({ type: 'ADD-POST', newPostText: '' });
 	};
 	let onPostChange = () => {
 		let text = newPostElement.current.value;
-		props.updateNewPostText(text);
+		let action = ({ type: 'UPDATE-NEW-POST-TEXT', newText: text });
+		props.dispatch(action);
 	};
 
 	return (
@@ -23,7 +23,7 @@ const MyPosts = (props) => {
 			<h3 className={classes.title}>My posts</h3>
 			<div className={classes.post__area}>
 				<textarea className={classes.textarea} name="message" id="messageArea" cols="30"
-					rows="10" placeholder="Enter your message" ref={newPostElement} value={props.newPostText}
+					rows="10" placeholder="Enter your message" ref={newPostElement} value={props.profilePage.newPostText}
 					onChange={onPostChange} />
 				<div className={classes.post__footer}>
 					<button className={classes.posts__btn} type="submit" onClick={addPost}>Add post</button>
