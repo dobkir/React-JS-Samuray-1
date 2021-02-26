@@ -10,4 +10,7 @@ let reducers = combineReducers({
 
 let store = createStore(reducers);
 
+window.store = store;
+// to see the current state enter in the console: store.getState()
+
 export default store;
