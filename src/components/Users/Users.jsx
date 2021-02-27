@@ -1,9 +1,13 @@
+import axios from 'axios';
 import classes from './Users.module.css';
+import userPhoto from '../../images/defolt_user_64px.webp'
 
 const Users = (props) => {
 
 	if (props.users.length === 0) {
-		props.setUsers();
+		axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
+			props.setUsers(response.data.items);
+		});
 	};
 
 	return (
@@ -12,7 +16,9 @@ const Users = (props) => {
 				props.users.map(u => <div key={u.id}>
 					<span>
 						<div>
-							<img className={classes.avatar} src={u.avatarUrl} alt="avatar" />
+							<img className={classes.avatar}
+								src={u.photos.small != null ? u.photos.small : userPhoto}
+								alt="avatar" />
 						</div>
 						<div>
 							{u.followed
@@ -22,12 +28,12 @@ const Users = (props) => {
 					</span>
 					<span>
 						<span>
-							<div>{u.fullName}</div>
+							<div>{u.name}</div>
 							<div>{u.status}</div>
 						</span>
 						<span>
-							<div>{u.location.country}</div>
-							<div>{u.location.city}</div>
+							<div>{"u.location.country"}</div>
+							<div>{"u.location.city"}</div>
 						</span>
 					</span>
 				</div>)

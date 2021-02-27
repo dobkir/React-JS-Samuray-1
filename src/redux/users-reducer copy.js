@@ -6,9 +6,9 @@ const SET_USERS = 'SET-USERS';
 
 let initialState = {
 	users: [
-		{ id: 1, avatarUrl: ava1, followed: false, fullName: 'Dmitry', status: 'I am like a boss', location: { city: 'Minsk', country: 'Belarus' } },
-		{ id: 2, avatarUrl: ava1, followed: true, fullName: 'Ivan', status: 'I am like a boss too', location: { city: 'Moskow', country: 'Russia' } },
-		{ id: 3, avatarUrl: ava1, followed: false, fullName: 'Andrew', status: 'I am like a boss too', location: { city: 'Minsk', country: 'Ukrain' } },
+		// { id: 1, avatarUrl: ava1, followed: false, fullName: 'Dmitry', status: 'I am like a boss', location: { city: 'Minsk', country: 'Belarus' } },
+		// { id: 2, avatarUrl: ava1, followed: true, fullName: 'Ivan', status: 'I am like a boss too', location: { city: 'Moskow', country: 'Russia' } },
+		// { id: 3, avatarUrl: ava1, followed: false, fullName: 'Andrew', status: 'I am like a boss too', location: { city: 'Minsk', country: 'Ukrain' } },
 	]
 };
 
