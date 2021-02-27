@@ -1,0 +1,9 @@
+.avatar {
+	grid-area: avatar;
+	margin: 0 auto;
+	width: 50px;
+	flex-shrink: 0;
+
+	border: .5px solid #DC143C;
+	border-radius: 50%;
+}
