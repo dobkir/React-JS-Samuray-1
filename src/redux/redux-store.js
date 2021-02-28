@@ -1,6 +1,6 @@
 import dialogsReducer from "./dialogs-reducer";
 import profileReducer from "./profile-reducer";
-import usersReducer from "./users-reducer copy";
+import usersReducer from "./users-reducer";
 
 const { createStore, combineReducers } = require("redux");
 

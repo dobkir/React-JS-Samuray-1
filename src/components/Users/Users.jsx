@@ -1,6 +1,6 @@
-import axios from 'axios';
+import * as axios from 'axios';
 import classes from './Users.module.css';
-import userPhoto from '../../images/defolt_user_64px.webp'
+import userPhoto from '../../images/defolt_user_64px.webp';
 
 const Users = (props) => {
 
@@ -13,30 +13,31 @@ const Users = (props) => {
 	return (
 		<div>
 			{
-				props.users.map(u => <div key={u.id}>
-					<span>
-						<div>
-							<img className={classes.avatar}
-								src={u.photos.small != null ? u.photos.small : userPhoto}
-								alt="avatar" />
-						</div>
-						<div>
-							{u.followed
-								? <button onClick={() => { props.unfollow(u.id) }}>Unfollow</button>
-								: <button onClick={() => { props.follow(u.id) }}>Follow</button>}
-						</div>
-					</span>
-					<span>
+				props.users.map(u =>
+					<div key={u.id}>
 						<span>
-							<div>{u.name}</div>
-							<div>{u.status}</div>
+							<div>
+								<img className={classes.avatar}
+									src={u.photos.small != null ? u.photos.small : userPhoto}
+									alt="avatar" />
+							</div>
+							<div>
+								{u.followed
+									? <button onClick={() => { props.unfollow(u.id) }}>Unfollow</button>
+									: <button onClick={() => { props.follow(u.id) }}>Follow</button>}
+							</div>
 						</span>
 						<span>
-							<div>{"u.location.country"}</div>
-							<div>{"u.location.city"}</div>
+							<span>
+								<div>{u.name}</div>
+								<div>{u.status}</div>
+							</span>
+							<span>
+								<div>{"u.location.country"}</div>
+								<div>{"u.location.city"}</div>
+							</span>
 						</span>
-					</span>
-				</div>)
+					</div>)
 			}
 		</div>
 	)
