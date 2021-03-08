@@ -7,3 +7,11 @@
 	border: .5px solid #DC143C;
 	border-radius: 50%;
 }
+
+.pageItem {
+	cursor: pointer;
+}
+
+.selectedPage {
+	font-weight: bold;
+}

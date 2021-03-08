@@ -75,14 +75,11 @@
 	background-color: #F08080;
 	border-color: transparent;
 	border-radius: 4px;
+	cursor: pointer;
 }
 
 .btn:hover,
 .btn:focus {
-	margin-top: 10px;
-	padding: 6px 16px;
-
-	/* font-size: 16px; */
 	font-weight: 600;
 	color: #90EE90;
 	text-transform: uppercase;
