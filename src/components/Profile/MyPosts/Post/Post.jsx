@@ -8,7 +8,7 @@ const Post = (props) => {
 			<img className={classes.avatar} src={ava1} alt='avatar' />
 			<div className={classes.post}>{props.message}</div>
 			<div className={classes.like}>
-				<p><FontAwesomeIcon icon={['fas', 'heart']} size="lg" fixedWidth /> {props.likesCount}</p>
+				<p><FontAwesomeIcon icon={['fas', 'heart']} size='lg' fixedWidth /> {props.likesCount}</p>
 			</div>
 		</div>
 	);
