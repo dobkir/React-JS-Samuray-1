@@ -1,5 +1,6 @@
 import classes from './Users.module.css';
 import userPhoto from '../../images/defolt_user_64px.webp';
+import { NavLink } from 'react-router-dom';
 
 let Users = (props) => {
 
@@ -23,9 +24,11 @@ let Users = (props) => {
 					<div key={u.id}>
 						<span>
 							<div>
-								<img className={classes.avatar}
-									src={u.photos.small != null ? u.photos.small : userPhoto}
-									alt="avatar" />
+								<NavLink to={'/profile/' + u.id}>
+									<img className={classes.avatar}
+										src={u.photos.small != null ? u.photos.small : userPhoto}
+										alt='avatar' />
+								</NavLink>
 							</div>
 							<div>
 								{u.followed

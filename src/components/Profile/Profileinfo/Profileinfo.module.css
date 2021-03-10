@@ -7,3 +7,20 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
+.profile__area {
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	max-width: 400px;
+}
+
+.avatar__large {
+	margin-top: 10px;
+	margin-right: 10px;
+	width: 150px;
+	flex-shrink: 0;
+
+	border: .5px solid #DC143C;
+	border-radius: 10%;
+}
