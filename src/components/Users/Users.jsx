@@ -1,4 +1,4 @@
-import * as axios from "axios";
+import * as axios from 'axios';
 import classes from './Users.module.css';
 import userPhoto from '../../images/defolt_user_64px.webp';
 import { NavLink } from 'react-router-dom';
@@ -37,7 +37,7 @@ let Users = (props) => {
 										axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
 											withCredentials: true,
 											headers: {
-												"API-KEY": "6d42916e-ad19-4ca0-a218-14ad30106c58"
+												'API-KEY': '6d42916e-ad19-4ca0-a218-14ad30106c58'
 											}
 										})
 											.then(response => {
@@ -50,7 +50,7 @@ let Users = (props) => {
 										axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
 											withCredentials: true,
 											headers: {
-												"API-KEY": "6d42916e-ad19-4ca0-a218-14ad30106c58"
+												'API-KEY': '6d42916e-ad19-4ca0-a218-14ad30106c58'
 											}
 										})
 											.then(response => {
@@ -67,8 +67,8 @@ let Users = (props) => {
 								<div>{u.status}</div>
 							</span>
 							<span>
-								<div>{"u.location.country"}</div>
-								<div>{"u.location.city"}</div>
+								<div>{'u.location.country'}</div>
+								<div>{'u.location.city'}</div>
 							</span>
 						</span>
 					</div>)
