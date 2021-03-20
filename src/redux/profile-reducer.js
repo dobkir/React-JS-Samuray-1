@@ -1,4 +1,4 @@
-import { usersAPI } from "../api/api";
+import { usersAPI } from '../api/api';
 
 const ADD_POST = 'ADD-POST';
 const CLEAR_POST = 'CLEAR-POST';
