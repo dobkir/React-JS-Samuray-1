@@ -9,11 +9,12 @@ const Header = (props) => {
 			<h1 className={classes.header__title}>React Samurai</h1>
 
 			<div className={classes.loginBlock}>
-				{props.isAuth ? props.login
+				{props.isAuth
+					? <div>{props.login} -- <button onClick={props.logout}>Log out</button> </div>
 					: <NavLink to={'/login'}>Login</NavLink>}
 			</div>
 		</header>
-	);
+	)
 };
 
 export default Header;
