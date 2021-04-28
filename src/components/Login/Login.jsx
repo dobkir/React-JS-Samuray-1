@@ -9,9 +9,9 @@ import FormStateFromRedux from '../common/Preloader/FormStateFromRedux';
 
 const Login = (props) => {
 
-	const loginFormState = ({ form }) => (
-		<FormSpy onChange={state => console.log(form, state)} />
-	);
+	// const loginFormState = ({ form }) => (
+	// 	<FormSpy onChange={state => console.log(form, state)} />
+	// );
 
 	const focusOnError = createDecorator()
 

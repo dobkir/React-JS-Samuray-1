@@ -2,7 +2,8 @@ import authReducer from './auth-reducer';
 import dialogsReducer from './dialogs-reducer';
 import profileReducer from './profile-reducer';
 import usersReducer from './users-reducer';
-import { finalFormReducer } from './finalForm-reducer'
+import { finalFormReducer } from './finalForm-reducer';
+import appReducer from './app-reducer';
 import thunkMiddleware from 'redux-thunk';
 
 const { createStore, combineReducers, applyMiddleware } = require('redux');
@@ -12,7 +13,8 @@ let reducers = combineReducers({
 	dialogsPage: dialogsReducer,
 	usersPage: usersReducer,
 	auth: authReducer,
-	finalForm: finalFormReducer
+	finalForm: finalFormReducer,
+	app: appReducer,
 });
 
 let store = createStore(reducers, applyMiddleware(thunkMiddleware));
