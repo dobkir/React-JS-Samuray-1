@@ -5,6 +5,7 @@ const CLEAR_POST = 'CLEAR-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET-USER-PROFILE';
 const SET_STATUS = 'SET-STATUS';
+const DELETE_POST = 'DELETE_POST';
 
 let initialState = {
 	posts: [
@@ -25,33 +26,35 @@ const profileReducer = (state = initialState, action) => {
 				id: state.posts.length + 1,
 				message: state.newPostText,
 				likesCount: '0'
-			};
+			}
 			return {
 				...state,
 				posts: [...state.posts, newPost],
 				newPostText: ''
-			};
+			}
 		case CLEAR_POST:
 			return {
 				...state,
 				newPostText: ''
-			};
+			}
 		case UPDATE_NEW_POST_TEXT:
 			return {
 				...state,
 				newPostText: action.newText
-			};
+			}
 		case SET_STATUS: {
 			return {
 				...state,
 				status: action.status
 			}
-		};
+		}
 		case SET_USER_PROFILE:
 			return {
 				...state,
 				profile: action.profile
-			};
+			}
+		case DELETE_POST:
+			return { ...state, posts: state.posts.filter(p => p.id != action.postId) }
 		default:
 			return state;
 	}
@@ -63,6 +66,7 @@ export const updateNewPostText = (text) =>
 	({ type: UPDATE_NEW_POST_TEXT, newText: text });
 export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile });
 export const setStatus = (status) => ({ type: SET_STATUS, status });
+export const deletePost = (postId) => ({ type: DELETE_POST, postId })
 
 export const getUserProfile = (userId) => (dispatch) => {
 	profileAPI.getProfile(userId).then(response => {

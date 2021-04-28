@@ -1,7 +1,7 @@
 // It doesn't work now. Saved as a template.
 
 // Actions
-const UPDATE_FORM_STATE = 'UPDATE_FORM_STATE'
+const UPDATE_FORM_STATE = 'UPDATE_FORM_STATE';
 
 // Reducer
 export function finalFormReducer(state = {}, action = {}) {
@@ -21,8 +21,8 @@ export const updateFormState = (form, state) => ({
 	type: UPDATE_FORM_STATE,
 	form,
 	payload: state
-})
+});
 
 // Selectors
 export const getFormState = (state, form) =>
-	(state && state.finalForm && state.finalForm[form]) || {}
+	(state && state.finalForm && state.finalForm[form]) || {};
