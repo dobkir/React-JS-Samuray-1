@@ -1,3 +1,5 @@
+// It doesn't work now. Saved as a template.
+
 // Actions
 const UPDATE_FORM_STATE = 'UPDATE_FORM_STATE'
 
