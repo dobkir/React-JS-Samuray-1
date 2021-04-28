@@ -13,7 +13,7 @@ let reducers = combineReducers({
 	dialogsPage: dialogsReducer,
 	usersPage: usersReducer,
 	auth: authReducer,
-	finalForm: finalFormReducer,
+	finalForm: finalFormReducer,  // Work with finalForm's state in redux-state. It doesn't work now. Saved as a template.
 	app: appReducer,
 });
 

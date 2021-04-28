@@ -14,41 +14,41 @@ let Users = (props) => {
 	return (
 		<div>
 			<div>
-				{pages.map(p => {
-					return <span className={`${props.currentPage === p && classes.selectedPage} ${classes.pageItem}`}
-						onClick={(e) => { props.onPageChanged(p); }}>{p} </span>
+				{pages.map((page, index) => {
+					return <span key={`${page}_${index}`} className={`${props.currentPage === page && classes.selectedPage} ${classes.pageItem}`}
+						onClick={(e) => { props.onPageChanged(page); }}>{page} </span>
 				})}
 			</div>
 			{
-				props.users.map(u =>
-					<div key={u.id}>
+				props.users.map(user =>
+					<div key={user.id}>
 						<span>
 							<div>
-								<NavLink to={'/profile/' + u.id}>
+								<NavLink to={'/profile/' + user.id}>
 									<img className={classes.avatar}
-										src={u.photos.small != null ? u.photos.small : userPhoto}
+										src={user.photos.small != null ? user.photos.small : userPhoto}
 										alt='avatar' />
 								</NavLink>
 							</div>
 							<div>
-								{u.followed
+								{user.followed
 									? <button disabled={props.followingInProgress
-										.some(id => id === u.id)}
-										onClick={() => { props.unfollow(u.id) }}>
+										.some(id => id === user.id)}
+										onClick={() => { props.unfollow(user.id) }}>
 										Unfollow</button>
-									: <button disabled={props.followingInProgress.some(id => id === u.id)}
-										onClick={() => { props.follow(u.id) }}>
+									: <button disabled={props.followingInProgress.some(id => id === user.id)}
+										onClick={() => { props.follow(user.id) }}>
 										Follow</button>}
 							</div>
 						</span>
 						<span>
 							<span>
-								<div>{u.name}</div>
-								<div>{u.status}</div>
+								<div>{user.name}</div>
+								<div>{user.status}</div>
 							</span>
 							<span>
-								<div>{'u.location.country'}</div>
-								<div>{'u.location.city'}</div>
+								<div>{'user.location.country'}</div>
+								<div>{'user.location.city'}</div>
 							</span>
 						</span>
 					</div>)
