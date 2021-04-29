@@ -4,10 +4,10 @@ import createDecorator from 'final-form-focus';
 import { Redirect } from 'react-router';
 import { connect } from 'react-redux';
 import { login } from "../../redux/auth-reducer";
-import FormStateToRedux from '../common/Preloader/FormStateToRedux';
-import FormStateFromRedux from '../common/Preloader/FormStateFromRedux';
+// import FormStateToRedux from '../common/FormStateToRedux';  // if I will to use Redux State
+// import FormStateFromRedux from '../common/FormStateFromRedux';  // if I will to use Redux State
 
-const Login = (props) => {
+const Login = ({ isAuth, login, authError }) => {
 
 	// const loginFormState = ({ form }) => (
 	// 	<FormSpy onChange={state => console.log(form, state)} />
@@ -15,12 +15,12 @@ const Login = (props) => {
 
 	const focusOnError = createDecorator()
 
-	if (props.isAuth) {
+	if (isAuth) {
 		return <Redirect to={"/profile"} />
 	}
 
 	const getResults = (values) => {
-		props.login(values.email, values.password, values.rememberMe);
+		login(values.email, values.password, values.rememberMe);
 	}
 
 	return (
@@ -87,8 +87,9 @@ const Login = (props) => {
 								Reset
             	</button>
 						</div>
-						{/* <h3>Form State from Redux</h3>
-						<FormStateFromRedux form="loginForm" /> */}
+						<div className={classes.authErrorField}>
+							{authError}
+						</div>
 					</form>
 				)}
 			/>
@@ -97,7 +98,8 @@ const Login = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-	isAuth: state.auth.isAuth
+	isAuth: state.auth.isAuth,
+	authError: state.auth.authError
 });
 
 export default connect(mapStateToProps, { login })(Login);

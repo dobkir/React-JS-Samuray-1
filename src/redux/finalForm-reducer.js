@@ -12,7 +12,7 @@ export function finalFormReducer(state = {}, action = {}) {
 				[action.form]: action.payload
 			}
 		default:
-			return state
+			return state;
 	}
 }
 

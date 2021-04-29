@@ -6,7 +6,8 @@ let initialState = {
 	userId: null,
 	email: null,
 	login: null,
-	isAuth: false
+	isAuth: false,
+	authError: null
 };
 
 const authReducer = (state = initialState, action) => {
@@ -23,9 +24,9 @@ const authReducer = (state = initialState, action) => {
 	}
 }
 
-export const setAuthUserData = (userId, email, login, isAuth) => ({
+export const setAuthUserData = (userId, email, login, isAuth, authError) => ({
 	type: SET_USER_DATA, payload:
-		{ userId, email, login, isAuth }
+		{ userId, email, login, isAuth, authError }
 });
 
 export const getAuthUserData = () => (dispatch) => {
@@ -33,7 +34,7 @@ export const getAuthUserData = () => (dispatch) => {
 		.then(response => {
 			if (response.data.resultCode === 0) {
 				let { id, login, email } = response.data.data;
-				dispatch(setAuthUserData(id, email, login, true));
+				dispatch(setAuthUserData(id, email, login, true, null));
 			}
 		});
 };
@@ -43,6 +44,9 @@ export const login = (email, password, rememberMe) => (dispatch) => {
 		.then(response => {
 			if (response.data.resultCode === 0) {
 				dispatch(getAuthUserData())
+			} else {
+				let authError = `Error: ${response.data.messages}`;
+				dispatch(setAuthUserData(null, null, null, false, authError))
 			}
 		});
 }

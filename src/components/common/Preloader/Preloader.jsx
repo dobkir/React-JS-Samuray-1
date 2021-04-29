@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-let Preloader = (props) => {
+let Preloader = () => {
 	return <div>
 		<FontAwesomeIcon icon={['fas', 'spinner']} size='lg' pulse />
 	</div>

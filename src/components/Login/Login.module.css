@@ -93,6 +93,46 @@ button[type='button'] {
 	background-color: #f3c6c6;
 }
 
+.authErrorField {
+	margin: 10px auto 0px;
+
+	font-weight: bold;
+	font-size: 1.2em;
+	text-align: center;
+
+	-webkit-animation: errorField 3s linear infinite;
+	animation: errorField 3s linear infinite;
+}
+
+@-webkit-keyframes errorField {
+	0% {
+		color: rgb(220, 20, 60);
+	}
+
+	50% {
+		color: rgb(144, 238, 144);
+	}
+
+	100% {
+		color: rgb(220, 20, 60);
+	}
+}
+
+@keyframes errorField {
+	0% {
+		color: rgb(220, 20, 60);
+	}
+
+	50% {
+		color: rgb(144, 238, 144);
+	}
+
+	100% {
+		color: rgb(220, 20, 60);
+	}
+}
+
+
 /* form {
 	max-width: 500px;
 	max-height: 200px;

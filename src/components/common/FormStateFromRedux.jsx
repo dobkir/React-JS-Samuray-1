@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
-import { getFormState } from '../../../redux/finalForm-reducer'
+import { getFormState } from '../../redux/finalForm-reducer'
 
 
 const FormStateFromRedux = ({ state }) => (
