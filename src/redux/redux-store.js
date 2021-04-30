@@ -6,9 +6,9 @@ import { finalFormReducer } from './finalForm-reducer';
 import appReducer from './app-reducer';
 import thunkMiddleware from 'redux-thunk';
 
-const { createStore, combineReducers, applyMiddleware } = require('redux');
+const { createStore, combineReducers, applyMiddleware, compose } = require('redux');
 
-let reducers = combineReducers({
+const reducers = combineReducers({
 	profilePage: profileReducer,
 	dialogsPage: dialogsReducer,
 	usersPage: usersReducer,
@@ -17,9 +17,11 @@ let reducers = combineReducers({
 	app: appReducer,
 });
 
-let store = createStore(reducers, applyMiddleware(thunkMiddleware));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-window.store = store;
+const store = createStore(reducers, composeEnhancers(applyMiddleware(thunkMiddleware)));
+
+window.__store__ = store;
 // to see the current state enter in the console: store.getState()
 
 export default store;

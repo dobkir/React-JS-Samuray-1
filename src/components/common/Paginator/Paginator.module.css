@@ -1,7 +1,32 @@
-.pageItem {
+.paginator {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 10px;
+}
+
+.pageNumber {
+	padding: 3px 6px;
+
+	text-align: center;
+
+	border: 1px solid #DC143C;
 	cursor: pointer;
 }
 
-.selectedPage {
+.pageNumber:first-of-type {
+	margin: 0;
+}
+
+.pageNumber:hover,
+.pageNumber:focus {
+	color: #fff;
+
+	background-color: #F08080;
+	border-color: transparent;
+}
+
+.pageNumber.selectedPage {
 	font-weight: bold;
+	border-color: black;
 }

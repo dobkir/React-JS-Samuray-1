@@ -6,7 +6,7 @@ let Users = ({ totalUsersCount, pageSize, currentPage, onPageChanged, users, ...
 	return (
 		<div>
 			<Paginator currentPage={currentPage} onPageChanged={onPageChanged}
-				totalUsersCount={totalUsersCount} pageSize={pageSize} />
+				totalItemsCount={totalUsersCount} pageSize={pageSize} />
 			<div>
 				{
 					users.map(user => <User user={user}
