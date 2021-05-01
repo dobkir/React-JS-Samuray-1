@@ -12,15 +12,54 @@
 	display: flex;
 	flex-direction: column;
 	padding: 10px;
-	max-width: 400px;
+	max-width: 220px;
 }
 
 .avatar__large {
-	margin-top: 10px;
-	margin-right: 10px;
-	width: 150px;
+	margin: 10px 10px 10px 0;
+	width: 190px;
 	flex-shrink: 0;
 
 	border: .5px solid #DC143C;
 	border-radius: 10%;
+}
+
+.avatar__input {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 10px 10px 10px 0;
+	padding: 5px 10px;
+
+	color: #fff;
+
+	background-color: #F08080;
+	border-color: transparent;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.avatar__input div {
+	position: relative;
+	z-index: 10;
+}
+
+.avatar__input input[type=file] {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	position: absolute;
+	z-index: -10;
+}
+
+#upload-container.dragover {
+	background-color: #fafafa;
+	outline-offset: -17px;
+}
+
+.input__label {
+	width: fit-content;
+
+	cursor: pointer;
 }

@@ -2,18 +2,33 @@ import Preloader from '../../common/Preloader/Preloader';
 import classes from './Profileinfo.module.css';
 import ProfileStatus from './ProfileStatus';
 
-const Profileinfo = (props) => {
-	if (!props.profile) {
+import userPhotoLarge from '../../../images/samurai.svg';
+
+const Profileinfo = ({ profile, status, updateStatus, isOwner, savePhoto }) => {
+
+	if (!profile) {
 		return <Preloader />
 	}
+
+	const onMainPhotoSelected = (e) => {
+		if (e.target.files.length) {
+			savePhoto(e.target.files[0]);
+		}
+	}
+
 	return (
 		<div>
 			<div className={classes.profile__top}></div>
 			<div className={classes.profile__area}>
-				<img className={classes.avatar__large} src={props.profile.photos.large} />
-				<p>Full Name: {props.profile.fullName}</p>
-				<p>About me: {props.profile.aboutMe}</p>
-				<div><ProfileStatus status={props.status} updateStatus={props.updateStatus} /></div>
+				<img className={classes.avatar__large} src={profile.photos.large || userPhotoLarge} />
+				<div className={classes.avatar__input}>
+					<label className={classes.input__label}>
+						{isOwner && <input type={'file'} onChange={onMainPhotoSelected} />}
+						{`>> Выберите аватар <<`}</label>
+				</div>
+				<p>Full Name: {profile.fullName}</p>
+				<p>About me: {profile.aboutMe}</p>
+				<div><ProfileStatus status={status} updateStatus={updateStatus} /></div>
 			</div>
 		</div>
 	);
