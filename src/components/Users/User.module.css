@@ -1,0 +1,33 @@
+.userFollowing {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: fit-content;
+}
+
+.userAvatar {
+	grid-area: avatar;
+	margin: 10px;
+	width: 50px;
+	flex-shrink: 0;
+
+	border: .5px solid #DC143C;
+	border-radius: 50%;
+}
+
+.userBlock {
+	display: flex;
+	flex-direction: column;
+}
+
+.userInfo {
+	margin: 10px;
+	width: fit-content;
+}
+
+.userName,
+.userStatus,
+.userCountry,
+.userCity {
+	margin: 0 0 0 10px;
+}

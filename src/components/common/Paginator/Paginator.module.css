@@ -19,14 +19,10 @@
 }
 
 .pageNumber:hover,
-.pageNumber:focus {
+.pageNumber:focus,
+.selectedPage {
 	color: #fff;
 
 	background-color: #F08080;
 	border-color: transparent;
-}
-
-.pageNumber.selectedPage {
-	font-weight: bold;
-	border-color: black;
 }

@@ -1,15 +1,15 @@
 import React from 'react';
-import classes from "./Users.module.css";
+import classes from "./User.module.css";
 import userPhoto from '../../images/defolt_user_64px.webp';
 import { NavLink } from "react-router-dom";
 
 const User = ({ user, followingInProgress, unfollow, follow }) => {
 	return (
-		<div>
-			<span>
+		<div className={classes.userBlock}>
+			<span className={classes.userFollowing}>
 				<div>
 					<NavLink to={'/profile/' + user.id}>
-						<img className={classes.avatar}
+						<img className={classes.userAvatar}
 							src={user.photos.small != null ? user.photos.small : userPhoto}
 							alt='avatar' />
 					</NavLink>
@@ -25,14 +25,12 @@ const User = ({ user, followingInProgress, unfollow, follow }) => {
 							Follow</button>}
 				</div>
 			</span>
-			<span>
+			<span className={classes.userInfo}>
 				<span>
-					<div>{user.name}</div>
-					<div>{user.status}</div>
-				</span>
-				<span>
-					<div>{'user.location.country'}</div>
-					<div>{'user.location.city'}</div>
+					<div className={classes.userName}>{user.name}</div>
+					<div className={classes.userStatus}>{user.status}</div>
+					<div className={classes.userCountry}>{'user.location.country'}</div>
+					<div className={classes.userCity}>{'user.location.city'}</div>
 				</span>
 			</span>
 		</div>
