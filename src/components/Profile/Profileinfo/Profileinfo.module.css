@@ -17,7 +17,7 @@
 
 .avatar__large {
 	margin: 10px 10px 10px 0;
-	width: 190px;
+	width: 200px;
 	flex-shrink: 0;
 
 	border: .5px solid #DC143C;
@@ -31,6 +31,7 @@
 	flex-wrap: wrap;
 	margin: 10px 10px 10px 0;
 	padding: 5px 10px;
+	width: 200px;
 
 	color: #fff;
 
@@ -62,4 +63,22 @@
 	width: fit-content;
 
 	cursor: pointer;
+}
+
+.profileStatus {
+	font-size: 1.1rem;
+	font-weight: 700;
+	color: #F08080;
+	-webkit-text-stroke: .5px #DC143C;
+}
+
+.inputStatus {
+	min-height: 100px;
+	max-height: 220px;
+	min-width: 200px;
+	max-width: 220px;
+	color: #F08080;
+
+	border-radius: 4px;
+	outline-color: #F08080;
 }

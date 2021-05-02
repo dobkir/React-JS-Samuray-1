@@ -26,9 +26,9 @@ const Profileinfo = ({ profile, status, updateStatus, isOwner, savePhoto }) => {
 						{isOwner && <input type={'file'} onChange={onMainPhotoSelected} />}
 						{`>> Выберите аватар <<`}</label>
 				</div>
-				<p>Full Name: {profile.fullName}</p>
-				<p>About me: {profile.aboutMe}</p>
-				<div><ProfileStatus status={status} updateStatus={updateStatus} /></div>
+				<p>Full Name: <span className={classes.profileStatus}> {profile.fullName}</span></p>
+				<p>About me: <span className={classes.profileStatus}> {profile.aboutMe}</span></p>
+				<div>Status (change on click): <ProfileStatus status={status} updateStatus={updateStatus} /></div>
 			</div>
 		</div>
 	);

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import classes from './Profileinfo.module.css';
 const ProfileStatus = (props) => {
 
 	let [editMode, setEditMode] = useState(false);
@@ -23,7 +23,7 @@ const ProfileStatus = (props) => {
 	}
 
 	return (
-		<div>
+		<div className={classes.profileStatus}>
 			{ !editMode &&
 				<div>
 					<span onDoubleClick={activateEditMode}>{props.status || "-------"}</span>
@@ -31,7 +31,7 @@ const ProfileStatus = (props) => {
 			}
 			{editMode &&
 				<div>
-					<input onChange={onStatusChange} autoFocus={true} onBlur={deactivateEditMode}
+					<textarea className={classes.inputStatus} onChange={onStatusChange} autoFocus={true} onBlur={deactivateEditMode}
 						value={status} />
 				</div>
 			}
