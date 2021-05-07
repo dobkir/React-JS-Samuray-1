@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "React Samurai",
+  "name": "React Samurai social network",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,15 +8,45 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "logo_samurai_16px.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "16x16"
     },
     {
-      "src": "logo512.png",
+      "src": "logo_samurai_32px.png",
       "type": "image/png",
-      "sizes": "512x512"
-    }
+      "sizes": "32x32"
+    },
+		{
+			"src": "logo_samurai_57px.png",
+      "type": "image/png",
+      "sizes": "57x57"
+		},
+		{
+			"src": "logo_samurai_72px.png",
+      "type": "image/png",
+      "sizes": "72x72"
+		},
+		{
+			"src": "logo_samurai_96px.png",
+      "type": "image/png",
+      "sizes": "96x96"
+		},
+		{
+			"src": "logo_samurai_96px.png",
+      "type": "image/x-icon",
+      "sizes": "96x96"
+		},
+		{
+			"src": "logo_samurai_114px.png",
+      "type": "image/png",
+      "sizes": "114x114"
+		},
+		{
+			"src": "logo_samurai_144px.png",
+      "type": "image/png",
+      "sizes": "144x144"
+		}
   ],
   "start_url": ".",
   "display": "standalone",
