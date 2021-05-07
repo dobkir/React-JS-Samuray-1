@@ -1,7 +1,7 @@
 import React from 'react';
 import Profile from './Profile';
 import { connect } from 'react-redux';
-import { getUserProfile, getStatus, savePhoto, updateStatus } from '../../redux/profile-reducer';
+import { getUserProfile, getStatus, savePhoto, saveProfile, updateStatus } from '../../redux/profile-reducer';
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import { withRouter } from 'react-router';
 import { compose } from 'redux';
@@ -56,7 +56,8 @@ export default compose(
 		getUserProfile,
 		getStatus,
 		updateStatus,
-		savePhoto
+		savePhoto,
+		saveProfile
 	}),
 	withRouter,
 	withAuthRedirect

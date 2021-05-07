@@ -21,12 +21,12 @@ const MyPosts = React.memo(props => {
 		<div className={classes.container}>
 			<h3 className={classes.title}>My posts</h3>
 			<div className={classes.post__area}>
-				<textarea className={classes.textarea} name="message" id="messageArea" cols="30"
-					rows="10" placeholder="Enter your message" ref={newPostElement} value={props.newPostText}
+				<textarea className={classes.textarea} name='message' id='messageArea' cols='30'
+					rows='10' placeholder='Enter your message' ref={newPostElement} value={props.newPostText}
 					onChange={onPostChange} />
 				<div className={classes.post__footer}>
-					<button className={classes.posts__btn} type="submit" onClick={onAddPost}>Add post</button>
-					<button className={classes.posts__btn} type="submit" onClick={onClearPost}>Clear post</button>
+					<button className={classes.posts__btn} type='submit' onClick={onAddPost}>Add post</button>
+					<button className={classes.posts__btn} type='submit' onClick={onClearPost}>Clear post</button>
 				</div>
 				<hr />
 				<div className={classes.posts}>

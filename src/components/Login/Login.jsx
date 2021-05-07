@@ -3,7 +3,7 @@ import classes from './Login.module.css';
 import createDecorator from 'final-form-focus';
 import { Redirect } from 'react-router';
 import { connect } from 'react-redux';
-import { login } from "../../redux/auth-reducer";
+import { login } from '../../redux/auth-reducer';
 // import FormStateToRedux from '../common/FormStateToRedux';  // if I will to use Redux State
 // import FormStateFromRedux from '../common/FormStateFromRedux';  // if I will to use Redux State
 
@@ -16,7 +16,7 @@ const Login = ({ isAuth, login, authError }) => {
 	const focusOnError = createDecorator()
 
 	if (isAuth) {
-		return <Redirect to={"/profile"} />
+		return <Redirect to={'/profile'} />
 	}
 
 	const getResults = (values) => {
@@ -50,7 +50,7 @@ const Login = ({ isAuth, login, authError }) => {
 				}}
 				render={({ handleSubmit, form, submitting, pristine, values }) => (
 					<form onSubmit={handleSubmit}>
-						{/* <FormStateToRedux form="loginForm" /> */}
+						{/* <FormStateToRedux form='loginForm' /> */}
 						<Field name='email'>
 							{/* {fieldState => (
 								<pre>{JSON.stringify(fieldState)}</pre>)} */}

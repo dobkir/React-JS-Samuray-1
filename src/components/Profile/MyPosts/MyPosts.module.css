@@ -21,9 +21,11 @@
 
 .textarea {
 	height: 100px;
+
+	color: #F08080;
+
 	resize: none;
 	outline-color: #F08080;
-
 	border-radius: 4px;
 }
 
