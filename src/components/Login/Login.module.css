@@ -14,7 +14,7 @@
 form {
 	line-height: 2em;
 	max-width: 520px;
-	max-height: 300px;
+	max-height: 620px;
 	margin: 10px auto 10px 10px;
 	padding: 20px;
 
@@ -107,6 +107,10 @@ span {
 	}
 }
 
+.captcha__img {
+	height: 50px;
+	width: 100px;
+}
 
 /* form {
 	max-width: 500px;

@@ -7,7 +7,7 @@ import { login } from '../../redux/auth-reducer';
 // import FormStateToRedux from '../common/FormStateToRedux';  // if I will to use Redux State
 // import FormStateFromRedux from '../common/FormStateFromRedux';  // if I will to use Redux State
 
-const Login = ({ isAuth, login, authError }) => {
+const Login = ({ isAuth, login, authError, captchaUrl }) => {
 
 	// const loginFormState = ({ form }) => (
 	// 	<FormSpy onChange={state => console.log(form, state)} />
@@ -20,7 +20,7 @@ const Login = ({ isAuth, login, authError }) => {
 	}
 
 	const getResults = (values) => {
-		login(values.email, values.password, values.rememberMe);
+		login(values.email, values.password, values.rememberMe, values.captcha);
 	}
 
 	return (
@@ -47,6 +47,7 @@ const Login = ({ isAuth, login, authError }) => {
 					email: '',
 					password: '',
 					rememberMe: false,
+					captcha: ''
 				}}
 				render={({ handleSubmit, form, submitting, pristine, values }) => (
 					<form onSubmit={handleSubmit}>
@@ -79,6 +80,18 @@ const Login = ({ isAuth, login, authError }) => {
 								</div>
 							)}
 						</Field>
+						{ captchaUrl && <img className={classes.captcha__img} src={captchaUrl} />}
+						{ captchaUrl &&
+							<Field name='captcha'>
+								{({ input, meta }) => (
+									<div className={`${classes.fieldArea} ${meta.active ? classes.active : ''}`}>
+										<label>Captcha</label>
+										<input {...input} type='text' placeholder='Symbols from image' />
+										{meta.error && meta.touched && <span>{meta.error}</span>}
+									</div>
+								)}
+							</Field>
+						}
 						<div className={classes.buttons}>
 							<button type='submit' disabled={submitting}>
 								Submit
@@ -99,7 +112,8 @@ const Login = ({ isAuth, login, authError }) => {
 
 const mapStateToProps = (state) => ({
 	isAuth: state.auth.isAuth,
-	authError: state.auth.authError
+	authError: state.auth.authError,
+	captchaUrl: state.auth.captchaUrl
 });
 
 export default connect(mapStateToProps, { login })(Login);
