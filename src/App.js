@@ -1,7 +1,7 @@
 import './App.css';
 
 import React from 'react';
-import { BrowserRouter, Redirect, Route, Switch, withRouter } from 'react-router-dom';
+import { HashRouter, Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { Provider, connect } from 'react-redux';
 import { compose } from 'redux';
 
@@ -61,11 +61,11 @@ let AppContainer = compose(
 const SamuraiJSApp = () => {
 	return (
 		<React.StrictMode>
-			<BrowserRouter>
+			<HashRouter>
 				<Provider store={store}>
 					<AppContainer />
 				</Provider>
-			</BrowserRouter>
+			</HashRouter>
 		</React.StrictMode>
 	)
 }
