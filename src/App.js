@@ -1,7 +1,7 @@
 import './App.css';
 
 import React from 'react';
-import { HashRouter, Route, withRouter } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { Provider, connect } from 'react-redux';
 import { compose } from 'redux';
 
@@ -17,6 +17,7 @@ import store from './redux/redux-store';
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
 const LoginPage = React.lazy(() => import('./components/Login/Login'));
 const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'));
+const Error404Page = React.lazy(() => import('./components/Error404/Error404'));
 
 class App extends React.Component {
 
@@ -34,10 +35,14 @@ class App extends React.Component {
 				<HeaderContainer />
 				<Navbar />
 				<div className='app-wrapper-content'>
-					<Route path='/profile/:userId?' render={() => <ProfileContainer />} />
-					<Route path='/dialogs' render={withSuspense(DialogsContainer)} />
-					<Route path='/users' render={withSuspense(UsersContainer)} />
-					<Route path='/login' render={withSuspense(LoginPage)} />
+					<Switch>
+						<Redirect exact from="/" to="/profile" />
+						<Route path='/profile/:userId?' render={() => <ProfileContainer />} />
+						<Route path='/dialogs' render={withSuspense(DialogsContainer)} />
+						<Route path='/users' render={withSuspense(UsersContainer)} />
+						<Route path='/login' render={withSuspense(LoginPage)} />
+						<Route path='*' render={withSuspense(Error404Page)} />
+					</Switch>
 				</div>
 			</div>
 		)
@@ -56,11 +61,11 @@ let AppContainer = compose(
 const SamuraiJSApp = () => {
 	return (
 		<React.StrictMode>
-			<HashRouter>
+			<BrowserRouter>
 				<Provider store={store}>
 					<AppContainer />
 				</Provider>
-			</HashRouter>
+			</BrowserRouter>
 		</React.StrictMode>
 	)
 }

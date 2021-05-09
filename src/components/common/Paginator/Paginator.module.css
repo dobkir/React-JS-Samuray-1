@@ -7,17 +7,17 @@
 
 .pageNumber {
 	padding: 3px 6px;
-	margin-right: 10px;
+
 	text-align: center;
 
 	border: 1px solid #DC143C;
 	cursor: pointer;
 }
 
-/*
-.pageNumber:first-of-type {
-	margin: 0;
-} */
+
+.pageNumber:last-of-type {
+	margin: 10px;
+}
 
 .pageNumber:hover,
 .pageNumber:focus,
@@ -29,7 +29,7 @@
 }
 
 .paginatorNav {
-	margin-right: 10px;
+	margin: 0 0 0 10px;
 	padding: 5px 10px;
 
 	color: #fff;

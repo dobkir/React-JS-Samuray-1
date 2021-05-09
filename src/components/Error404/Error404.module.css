@@ -1,0 +1,53 @@
+.error__container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 90vh;
+
+	background-image: url('../../images/background_Fuji.webp');
+	background-color: #F08080;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.error__title {
+	margin-top: 25%;
+
+	font-size: 2rem;
+	font-weight: 800;
+	color: #F08080;
+	-webkit-text-stroke: .5px #DC143C;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+.error__description {
+	margin: 0;
+
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: #F08080;
+	-webkit-text-stroke: .5px #DC143C;
+	letter-spacing: 1.5px;
+}
+
+.error__backlink {
+	font-size: 1.2rem;
+	font-weight: 500;
+	color: #90EE90;
+	-webkit-text-stroke: .2px #F08080;
+}
+
+.error__link {
+	text-decoration: none;
+	font-weight: 700;
+
+	background-color: transparent;
+}
+
+.error__link:hover,
+.error__link:focus {
+	color: #F08080;
+	-webkit-text-stroke: .2px #90EE90;
+}
